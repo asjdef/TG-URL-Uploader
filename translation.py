@@ -49,6 +49,19 @@ Send /me to know current plan details
 
 Support Group : @SL_MEDIA_TECH_GRUOP
 © @NovaTechlk"""
+    
+    reply_markup=InlineKeyboardMarkup(
+                                [[
+                                        InlineKeyboardButton(
+                                            "Help", callback_data="help"),
+                                        InlineKeyboardButton(
+                                            "Channel", url="https://t.me/sl_media_tech")
+                                    ],[
+                                      InlineKeyboardButton(
+                                            "Source Code", url="https://github.com/Akila-Widuruwan/TG-URL-Uploader")
+                                    ]]
+                            ),   
+    
     REPLY_TO_DOC_GET_LINK = "Reply to a Telegram media to get High Speed Direct Download Link"
     REPLY_TO_DOC_FOR_C2V = "Reply to a Telegram media to convert"
     REPLY_TO_DOC_FOR_SCSS = "Reply to a Telegram media to get screenshots"
