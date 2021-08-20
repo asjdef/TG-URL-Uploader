@@ -74,3 +74,17 @@ async def upgrade(bot, update):
         reply_to_message_id=update.message_id,
         disable_web_page_preview=True
     )
+    
+@Client.on_message(filters.command(["start"]))
+def send_start(bot, update):
+    # logger.info(update)
+    
+    bot.send_message(
+        chat_id=update.chat.id,
+        text=script.START_TEXT.format(update.from_user.first_name),
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🌀 CHANNEL 🌀", url="https://t.me/slbotzone")],
+                                                [InlineKeyboardButton(text=" 📦   SOURCE CODE 📦  ", url="https://github.com/supunmadurangasl/file-rename-bot")]]),
+        parse_mode="html",
+        disable_web_page_preview=True,
+        reply_to_message_id=update.message_id
+    )
